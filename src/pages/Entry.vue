@@ -30,8 +30,8 @@ export default {
     const params = {
       id: 1
     }
-    const result = await Axios.get('/api/userLogin', params)
-    console.log(result)
+    const result = await Axios.get('/api/user/login', params)
+    console.log(result.data.data)
   },
   mounted () {
 

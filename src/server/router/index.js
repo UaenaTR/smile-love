@@ -4,6 +4,6 @@ const UserController = require('../controllers/user.js')
 
 const router = new Router()
 
-router.get('/userLogin', UserController.detail)
+router.get('/user/login', UserController.detail)
 
 module.exports = router
