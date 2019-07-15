@@ -1,15 +1,16 @@
 <template>
     <div>
-      <img class="logo" src="../assets/img/logo.png">
-      <div class="ran-yun">
+      <!-- <img class="logo" src="../assets/img/logo.png"> -->
+      <!-- <div class="ran-yun">
         <cube-button class="entry-btn" @click='goIndex(0)'>然</cube-button>
         <cube-button class="entry-btn" @click='goIndex(1)'>云</cube-button>
       </div>
-      <img class="love-tips" src="../assets/img/tips.png" alt="">
+      <img class="love-tips" src="../assets/img/tips.png" alt=""> -->
     </div>
 </template>
 
 <script>
+import Axios from '../utils/request'
 export default {
   props: {
 
@@ -25,8 +26,12 @@ export default {
   computed: {
 
   },
-  created () {
-
+  async created () {
+    const params = {
+      id: 1
+    }
+    const result = await Axios.get('/api/userLogin', params)
+    console.log(result)
   },
   mounted () {
 

@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
 #app {
   text-align: center;
-  background: linear-gradient(#ffcec0,#ff3f79);
+  // background: linear-gradient(#ffcec0,#ff3f79);
   height: 100%;
 
   .logo{
