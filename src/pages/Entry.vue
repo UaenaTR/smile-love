@@ -6,6 +6,10 @@
         <cube-button class="entry-btn" @click='goIndex(1)'>云</cube-button>
       </div>
       <img class="love-tips" src="../assets/img/tips.png" alt=""> -->
+      <p @click="getAll">所有用户</p>
+      <p @click="register">哈哈</p>
+      <p @click="update">更新</p>
+      <p @click="logout">注销</p>
     </div>
 </template>
 
@@ -40,6 +44,34 @@ export default {
 
   },
   methods: {
+    // 查询所有
+    async getAll () {
+      const result = await Axios.get('api/user/getAll')
+      console.log(result)
+    },
+    // 注册
+    async register () {
+      const params = {
+        name: 'hh',
+        password: '03-23'
+      }
+      await Axios.post('api/user/register', params)
+    },
+    async update () {
+      const params = {
+        id: 4,
+        name: 'xx',
+        password: 'update'
+      }
+      await Axios.post('api/user/update', params)
+    },
+    // 注销
+    async logout () {
+      const params = {
+        id: 3
+      }
+      await Axios.get('api/user/logout', params)
+    },
     // 弹出密码窗
     showPassword (title, birth, name) {
       this.passwordDialog = this.$createDialog({
