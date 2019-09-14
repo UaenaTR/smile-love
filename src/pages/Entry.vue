@@ -7,7 +7,7 @@
       </div>
       <img class="love-tips" src="../assets/img/tips.png" alt=""> -->
       <p @click="getAll">所有用户</p>
-      <p @click="register">哈哈</p>
+      <p @click="register">注册</p>
       <p @click="update">更新</p>
       <p @click="logout">注销</p>
     </div>
@@ -59,7 +59,7 @@ export default {
     },
     async update () {
       const params = {
-        id: 4,
+        id: 1,
         name: 'xx',
         password: 'update'
       }
@@ -68,7 +68,7 @@ export default {
     // 注销
     async logout () {
       const params = {
-        id: 3
+        id: 1
       }
       await Axios.get('api/user/logout', params)
     },
